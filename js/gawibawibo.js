@@ -100,7 +100,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
 			} else {
 				alert('가위! 바위! 보! 대결은 한번만 할수 있습니다.\n내가 "가위!바위!보!"를 제안해보세요.');
-				window.location.href = 'http://goo.gl/yivlH'
+				window.location.href = 'http://goo.gl/sucy1'
 				return false;
 			}
 
@@ -114,7 +114,7 @@ window.addEventListener('DOMContentLoaded', function(){
 				youImg = '../imgApp/youg3.png'
 			}
 			M('#you img').attr('src', youImg)
-			M('#you p').text( decodeURIComponent(hashObj['n']) )
+			M('#you p').html( '<a href="http://www.twitter/' + decodeURIComponent(hashObj['n']) + '">@'+decodeURIComponent(hashObj['n']) +'</a>')
 
 			if (hashObj['gbb'] === '1') {
 				myImg = '../imgApp/myg1.png'
@@ -152,7 +152,7 @@ window.addEventListener('DOMContentLoaded', function(){
 			}
 			if (result === 'win') {
 				M('#msg').text('이겼습니다.');
-				M('#gong').html('인증샷을 카스에 올려서<br>' + decodeURIComponent(hashObj['n']) + '님의 공약인<br>“' + decodeURIComponent(hashObj['g']) + '”.<br>소원을 들어달라고 조르세요!!');
+				M('#gong').html('인증샷을 카스에 올려서<br><a href="http://www.twitter/' + decodeURIComponent(hashObj['n']) + '">@'+decodeURIComponent(hashObj['n']) +'</a>님의 공약인<br>“' + decodeURIComponent(hashObj['g']) + '”.<br>소원을 들어달라고 조르세요!!');
 				M('#btnCerti').css('display', 'block')
 				M('#myName').css('display', 'inline-block')
 				
@@ -162,16 +162,15 @@ window.addEventListener('DOMContentLoaded', function(){
 						,urlMsg
 
 					if (!myName) {
-						alert('내 이름을 입력해주세요.')
+						alert('트위터 아이디를 입력해주세요.')
 						return;
 					}
 					postMsg += '[가위! 바위! 보!]\n';
-					postMsg += '@' + myName+'님이 @' + decodeURIComponent(hashObj['n']) + '님과의 "가위! 바위! 보!" 게임에서 이겼습니다. \n';
-					postMsg += decodeURIComponent(hashObj['n']) + '님은 약속대로\n';
-					postMsg += '"' + decodeURIComponent(hashObj['g']) + '"\n';
+					postMsg += '@' + decodeURIComponent(hashObj['n']) + '님과의 "가위! 바위! 보!" 게임에서 이겼습니다. \n';
+					postMsg += '약속대로 "' + decodeURIComponent(hashObj['g']) + '"\n';
 					postMsg += '했던 소원을 들어주시기 바랍니다.\n\n';
 
-					postMsg += 'http://goo.gl/yivlH \n';
+					postMsg += 'http://goo.gl/sucy1 \n';
 
 					var str = ''
 					str += 'https://twitter.com/intent/tweet?text=';
