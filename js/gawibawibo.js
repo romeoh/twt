@@ -114,7 +114,7 @@ window.addEventListener('DOMContentLoaded', function(){
 				youImg = '../imgApp/youg3.png'
 			}
 			M('#you img').attr('src', youImg)
-			M('#you p').html( '<a href="http://www.twitter/' + decodeURIComponent(hashObj['n']) + '">@'+decodeURIComponent(hashObj['n']) +'</a>')
+			M('#you p').html( '<a href="http://www.twitter.com/' + decodeURIComponent(hashObj['n']) + '" target="_blank">@'+decodeURIComponent(hashObj['n']) +'</a>')
 
 			if (hashObj['gbb'] === '1') {
 				myImg = '../imgApp/myg1.png'
@@ -152,7 +152,7 @@ window.addEventListener('DOMContentLoaded', function(){
 			}
 			if (result === 'win') {
 				M('#msg').text('이겼습니다.');
-				M('#gong').html('인증샷을 카스에 올려서<br><a href="http://www.twitter/' + decodeURIComponent(hashObj['n']) + '">@'+decodeURIComponent(hashObj['n']) +'</a>님의 공약인<br>“' + decodeURIComponent(hashObj['g']) + '”.<br>소원을 들어달라고 조르세요!!');
+				M('#gong').html('인증샷을 카스에 올려서<br><a href="http://www.twitter.com/' + decodeURIComponent(hashObj['n']) + '" target="_blank">@'+decodeURIComponent(hashObj['n']) +'</a>님의 공약인<br>“' + decodeURIComponent(hashObj['g']) + '”.<br>소원을 들어달라고 조르세요!!');
 				M('#btnCerti').css('display', 'block')
 				M('#myName').css('display', 'inline-block')
 				

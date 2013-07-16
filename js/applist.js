@@ -1,10 +1,12 @@
-var appListMin = ''
+var appList = ''
+appList += '<li data-app="3"><a href="http://goo.gl/GZRBR">마구!마구! 숫자야구</a></li>';
+appList += '<li data-app="2"><a href="http://goo.gl/qYVOp">탭! 탭! 탭!</a></li>';
+appList += '<li data-app="1"><a href="http://goo.gl/sucy1">가위! 바위! 보!</a></li>';
 
-
-if (M('[data-list-min]').selector.length > 0) {
-	var currentApp = M('[data-list-min]').data('list-min');
-	M('[data-list-min]').html(appListMin);
-	M('[data-app-min="' + currentApp + '"]').remove();
+if (M('[data-list]').selector.length > 0) {
+	var currentApp = M('[data-list]').data('list')
+	M('[data-list]').html(appList);
+	M('[data-app="' + currentApp + '"]').remove();
 }
 
 

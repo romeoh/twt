@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>  
+<title>funnyApp</title>
+<link rel="stylesheet" type="text/css" href="../css/styleClick.css">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2760623096296279";
+/* baseball Header */
+google_ad_slot = "7687785361";
+google_ad_width = 320;
+google_ad_height = 50;
+//-->
+</script>
+
+
+<style type="text/css">
+* {margin:0; padding:0}
+body {background:url(../imgApp/bg_baseball.png); color:#fff; padding:0 0 20px 0}
+h1 {font-size:35px; letter-spacing:-3px; text-align:center; margin:10px}
+h2 {font-size:17px; text-align:center; letter-spacing:-2px}
+.board {border:2px solid #d7dd5f; border-radius:10px; width:90%; margin:0 auto 20px auto; padding:10px; text-align:center;}
+#selTeam ul {margin:0 auto; width:280px;}
+#selTeam li {float:left; list-style:none; margin:0 10px 10px 0}
+#selTeam li .title {text-align:center; color:#d7dd5f; font-size:20px; font-weight:bold;}
+#selTeam li .nick {text-align:center; font-size:16px}
+.vs {font-size:30px; color:#d7dd5f; padding:10px}
+.clear {clear:both;}
+#teamMatch li {list-style:none;}
+
+.btnBox {text-align:center; padding-bottom:20px}
+.button {border-radius:10px; padding:10px 30px; text-align:center; font-size:16px; background:url(../imgApp/bg_btn.png); border:none; color:#3e0b24;}
+.pink {background:url(../imgApp/bg_btnPink.png)}
+.submit {padding:5px 10px; margin-bottom:4px;}
+
+.number {width:30px; height:30px; font-size:25px; text-align:center; vertical-align:middle;}
+.info {font-size:12px; padding:0 10px 20px 10px}
+
+#play li {border-bottom:1px solid #d7dd5f; padding:10px; list-style:none;}
+#play li:last-child {border-bottom:none;}
+#play li p {padding-top:10px}
+
+#step2, 
+#step3,
+#step4,
+#btnPlayBox {display:none;}
+
+#roundCount {width:250px; margin:0 auto}
+.result {display:none; clear:both}
+.selectNumbers {width:30px; position:absolute; top:-170px; left:-5px;}
+.selectNumbers li.selNum {list-style:none; padding:5px 18px !important; border:1px solid #333 !important; background:#eee; color:#333;}
+.numberLists {position:relative; float:left; margin-right:5px}
+.roundIdx {float:left; padding:7px 5px 0 }
+
+.teamvs {margin:0 10px}
+.teamvs .left {float:left; padding-left:30px}
+.teamvs .right {float:right; padding-right:30px}
+
+table {border:2px solid #fff; width:100%;border-collapse:collapse;}
+table th,
+table td {border:1px solid #fff; padding:3px;}
+.appList {clear:both; border-radius:10px; background:#fff; margin:40px 10px 10px 10px; color:#333; padding:10px}
+.appList h2 {text-align:left; padding:10px 0; font-size:20px}
+.appList li {list-style:none; padding:5px 0}
+</style>
+
+</head>
+
+<body>
+<div style="text-align:center" id="adTop">
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<h1>마구! 마구! 숫자야구</h1>
+<div id="step1">
+	<h2 class="round">팀을 선택하세요.</h2>
+	<div id="selTeam" class="board">
+		<ul>
+			<li data-sel-team="0">
+				<img src="../imgApp/team_a.png" alt="기아타이거즈">
+				<p class="title">기아</p>
+				<p class="nick">타이거즈</p>
+			</li>
+			<li data-sel-team="1">
+				<img src="../imgApp/team_b.png" alt="넥센히어로즈">
+				<p class="title">넥센</p>
+				<p class="nick">히어로즈</p>
+			</li>
+			<li data-sel-team="2">
+				<img src="../imgApp/team_c.png" alt="두산베어스">
+				<p class="title">두산</p>
+				<p class="nick">베어스</p>
+			</li>
+			<li data-sel-team="3">
+				<img src="../imgApp/team_d.png" alt="롯데자이언츠">
+				<p class="title">롯데</p>
+				<p class="nick">자이언츠</p>
+			</li>
+			<li data-sel-team="4">
+				<img src="../imgApp/team_e.png" alt="삼성라이온즈">
+				<p class="title">삼성</p>
+				<p class="nick">라이온즈</p>
+			</li>
+			<li data-sel-team="5">
+				<img src="../imgApp/team_f.png" alt="SK와이번스">
+				<p class="title">SK</p>
+				<p class="nick">와이번스</p>
+			</li>
+			<li data-sel-team="6">
+				<img src="../imgApp/team_g.png" alt="NC다이노스">
+				<p class="title">NC</p>
+				<p class="nick">다이노스</p>
+			</li>
+			<li data-sel-team="7">
+				<img src="../imgApp/team_h.png" alt="LG트윈스">
+				<p class="title">LG</p>
+				<p class="nick">트윈스</p>
+			</li>
+			<li data-sel-team="8">
+				<img src="../imgApp/team_i.png" alt="한화이글스">
+				<p class="title">한화</p>
+				<p class="nick">이글스</p>
+			</li>
+			<h2 class="clear" id=""></h2>
+		</ul>
+	</div>
+</div>
+
+<div id="step2">
+	<h2 class="round">경기를 시작합니다.</h2>
+	<div id="teamMatch" class="board">
+		<ul>
+			<li data-match-team="0">
+				<img src="../imgApp/team_a.png" alt="기아타이거즈">
+				<p class="title">기아 타이거즈</p>
+			</li>
+			<li class="vs">
+				VS
+			</li>
+			<li data-match-team="1">
+				<img src="../imgApp/team_b.png" alt="넥센히어로즈">
+				<p class="title">넥센 히어로즈</p>
+			</li>
+		</ul>
+	</div>
+	<div id="btnPlayBox" class="btnBox">
+		<button id="btnPlay" class="button pink">경기시작</button>
+	</div>
+</div>
+
+<div id="step3">
+	<div class="teamvs">
+		<div class="left"><img src="" id="vsMyTeam"></div>
+		<div class="right"><img src="" id="vsYourTeam"></div>
+		<div class="clear"></div>
+	</div>
+	<h2 class="round" id="roundInfo"></h2>
+	<div id="play" class="board">
+		<ul id="roundCount">
+			
+		</ul>
+	</div>
+	<div class="info">
+		<ul>
+			<li>S: 스트라이크(숫자와 순서가 모두 맞습니다.)</li>
+			<li>B: 볼(숫자는 맞지만, 순서가 틀립니다.)</li>
+			<li>O: 아웃(일치하는 숫자와 순서가 없습니다.)</li>
+		</ul>
+	</div>
+</div>
+
+<div id="step4">
+	<div id="teamMatch" class="board" cellspacing="0">
+		<table>
+		<colgroup>
+			<col width="50">
+			<col width="*">
+			<col width="60">
+			<col width="40">
+			<col width="40">
+			<col width="50">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>순위</th>
+				<th>팀명</th>
+				<th>경기수</th>
+				<th>승</th>
+				<th>패</th>
+				<th>승률</th>
+			</tr>
+		</thead>
+		<tbody id="ranking">
+			<!--tr>
+				<td>1</td>
+				<td>기아</td>
+				<td>30</td>
+				<td>20</td>
+				<td>10</td>
+				<td>0.56</td>
+			</tr-->
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="share" class="btnBox">
+	<button id="btnStory" class="button">팀순위 보기</button>
+	<button id="btnKakao" class="button">카톡친구 초대</button>
+</div>
+
+
+<!--script type="text/javascript"><!--
+google_ad_client = "ca-pub-2760623096296279";
+/* baseball Middle2 */
+google_ad_slot = "9164518560";
+google_ad_width = 300;
+google_ad_height = 250;
+//--
+</script>
+<div style="text-align:center; margin-top:30px" id="adMiddle">
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>-->
+</div>
+
+<div class="appList">
+	<h2>다른 미니앱 보기</h2>
+	<ul data-list-min="21">
+	</ul>
+</div>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2760623096296279";
+/* baseball Footer2 */
+google_ad_slot = "1641251763";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<div style="text-align:center" id="adBottom">
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<!--div class="address">
+	funnyApp - <a href="mailto:romeoh@naver.com">Contact</a>
+</div-->
+
+<script type="text/javascript" src="../js/kakao.link.js"></script>
+<script type="text/javascript" src="../js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../js/mpui.js"></script>
+<script type="text/javascript" src="../js/applist.js"></script>
+<script type="text/javascript" src="../js/baseball.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40618162-1', 'github.io');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
