@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+body {background:#3b589c; margin:0}
+button {background-image: 
+    background-image: linear-gradient(bottom, rgb(50,68,129) 0%, rgb(99,116,169) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(50,68,129) 0%, rgb(99,116,169) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(50,68,129) 0%, rgb(99,116,169) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(50,68,129) 0%, rgb(99,116,169) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(50,68,129) 0%, rgb(99,116,169) 100%);
+
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, rgb(50,68,129)),
+      color-stop(1, rgb(99,116,169))
+    );
+    
+    border-radius: 10px;width:260px;height:40px;
+    box-shadow: rgba(0, 0, 0, 0.496094) 0px 1px 1px 0px, rgba(0, 0, 0, 0.0976563) 0px -1px 0px 0px;
+    border:0px;font-size:1.25em;text-align: center; line-height: 40px; margin:0px auto; color:#edeff4
+}
+button.btns {width:120px;}
+.wrap {background:#f5f7fa; border-radius:30px; padding:20px; margin:10px}
+h1 {font-size: 22px; text-align:center;}
+h2.go {text-align:center;}
+.info {font-size:18px; text-align:center; padding:0 5px; line-height:20px;}
+.description {font-size:13px; text-align:center; padding:0 20px; line-height:20px;}
+.inputName {height:35px;font-size:14px; border:1px solid #e7e7e7; padding-left:5px }
+.section {border-top: 1px solid #e7e7e7; border-bottom: 1px solid #e7e7e7; padding:5px 0; margin:10px auto; text-align: center;}
+.section2 {border-bottom: 1px solid #e7e7e7; padding:5px 0; margin:10px auto; text-align: center;}
+.sumit {text-align:center; padding-bottom:10px}
+.appList {text-align:left; padding:10px}
+.appList h2 {font-size:20px; line-height:16px; margin:10px; padding:0; color:#edeff4; text-align:left;}
+.appList ul {border:1px solid #eee; background:white; border-radius:10px; padding:0; margin:0}
+.appList ul li {list-style:none; border-bottom:1px solid #ccc; padding:10px}
+.appList ul li a {text-decoration:none}
+.appList ul li:last-child {border-bottom:none}
+#adTop,
+#adMiddle,
+#adBottom {text-align:center}
+
+
+.game {background:url(../img/vs.jpg) no-repeat center 50px; }
+.game .first {float:left}
+.game .second {float:right}
+.game .first p,
+.game .second p {text-align:center;}
+.game .round {clear:both; text-align:center; font-weight:bold; font-size:22px}
+.game .stage {text-align:center;}
+#result {}
+#result .winner {text-align:center;}
+#result .winner .title {color:#cd329e;}
+#result .winner .photo {}
+#result .winner .names {}
+
+#result {position:relative; z-index:102}
+#result .nav {position:absolute; top:100px; border-radius:10px; opacity:.3; width:50px; height:50px;}
+#result .next {background:url('../imgKatalk/btnLeft.png') no-repeat #000 13px 10px; left:-30px}
+#result .prev {background:url('../imgKatalk/btnRight.png') no-repeat #000 20px 10px; right:-30px}
+#wrapper {min-height:200px}
+#indicator {position:absolute; top:180px; left:0px;}
+#indicator .ico {position:absolute; background:url('../imgKatalk/loading.png') no-repeat 0 0; width:25px; height:25px; z-index:101; top:13px; left:13px;}
+#indicator .back {position:absolute; background:#000; border-radius:10px; width:50px; height:50px; opacity:.5; z-index:100; }
+
+
+h2 {text-align:center;}
+.game {background:url(../img/vs.jpg) no-repeat center 50px; }
+.game .first {float:left; text-align:center;}
+.game .second {float:right; text-align:center;}
+.game .first p,
+.game .second p {text-align:center;}
+.game .round {clear:both; text-align:center; font-weight:bold; font-size:22px}
+.game .stage {text-align:center;}
+#result {}
+#result .winner {text-align:center;}
+#result .winner .title {color:#cd329e;}
+#result .winner .photo {}
+#result .winner .names {}
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {clear: both;}
+
+.clearfix {*zoom: 1;}
+
+.prettycheckbox,
+.prettyradio {
+    display: inline-block;
+    padding:0;
+    margin:0;
+}
+
+.prettycheckbox a,
+.prettyradio a{
+    width: 30px;
+    height: 30px;
+    background: url(../img/prettyCheckable-blue.png) top left no-repeat;
+    display: block;
+    float: left;
+    cursor: pointer;
+    margin:0;
+}
+
+.prettycheckbox.green a,
+.prettyradio.green a{ background-image: url(prettyCheckable-green.png);}
+
+.prettycheckbox.red a,
+.prettyradio.red a{ background-image: url(prettyCheckable-red.png);}
+
+.prettycheckbox.yellow a,
+.prettyradio.yellow a{ background-image: url(prettyCheckable-yellow.png);}
+
+.prettyradio a {background-position: 0 -120px;}
+
+.prettycheckbox a:focus,
+.prettyradio a:focus {outline: 0 none;}
+
+.prettycheckbox a:focus{background-position: 0 -30px;}
+.prettyradio a:focus{background-position: 0 -150px;}
+
+.prettycheckbox a.checked{ background-position: 0 -60px; }
+.prettyradio a.checked { background-position: 0 -180px; }
+
+.prettycheckbox a.checked:focus{ background-position: 0 -90px; }
+.prettyradio a.checked:focus { background-position: 0 -210px; }
+
+.prettycheckbox label,
+.prettyradio label {
+  display: block;
+  float: left;
+  margin: 6px 5px;
+  cursor: pointer;
+}
+
+.prettycheckbox.disabled a,
+.prettyradio.disabled a,
+.prettycheckbox.disabled label,
+.prettyradio.disabled label{
+  cursor:not-allowed;
+}
+
+.prettycheckbox.disabled a {
+  background-position: 0 -240px;
+}
+
+.prettyradio.disabled a {
+  background-position: 0 -270px;
+}
+
+#goStore {position:absolute; height:200px; background:#fff; width:300px; top:80px; -webkit-box-shadow:0px 0px 10px #000}
+#goStore iframe {border:none; height:200px}
+
+
+.checkList {text-align:left; margin:10px 0}
+.checkList div {background:url(../img/prettyCheckable-blue.png) no-repeat 0 -125px; width:35px; height:25px; float:left}
+.sel div {background:url(../img/prettyCheckable-blue.png) no-repeat 0 -185px; width:35px; height:25px; float:left}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
