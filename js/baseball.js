@@ -412,23 +412,26 @@ function selNumbers() {
 			.last()
 			.html(str)
 
-			M('[data-select-number]').on('touchstart', function(evt, mp){
+			M('[data-select-number]').on('touchstart', startEvt);
+			M('[data-select-number]').on('mousedown', startEvt);
+			function startEvt(evt, mp) {
 				var  numValue = mp.data('select-number')
 					,that = mp.parent()
 				that.parent().first().data('number', numValue).text(numValue)
 				that.remove()
-			})
+			}
 		}, 100)
 		
-		M('body').on('touchend', function(){
+		M('body').on('touchend', bodyEnd)
+		M('body').on('mouseup', bodyEnd)
+		function bodyEnd(evt, mp) {
 			setTimeout(function(){
 				M('body').off('touchend')
 				try{
 					M('[data-id="selectNum"]').remove()
 				}catch(err){}
 			}, 10)
-		})
-
+		}
 	})
 }
 
